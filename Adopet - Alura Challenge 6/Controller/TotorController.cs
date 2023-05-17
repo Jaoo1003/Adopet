@@ -51,5 +51,18 @@ namespace Adopet___Alura_Challenge_6.Controller {
             _context.SaveChanges();
             return CreatedAtAction(nameof(BuscaTutorPorId), new { id = tutor.Id }, tutor);
         }
+
+        [HttpGet]
+        public IEnumerable<Tutor> BuscarTutores() {
+            return _context.Tutores;
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscaTutorPorId(int id) {
+            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
+            if (tutor == null) return NotFound();
+
+            return Ok(tutor);
+        }
     }
 }
