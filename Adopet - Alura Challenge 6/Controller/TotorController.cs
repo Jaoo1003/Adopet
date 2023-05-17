@@ -43,5 +43,13 @@ namespace Adopet___Alura_Challenge_6.Controller {
             _context.SaveChanges();
             return NoContent();
         }
+
+        [HttpPost]
+        public IActionResult CadastrarTutor([FromBody] CreateTutorDto dto) {
+            var tutor = _mapper.Map<Tutor>(dto);
+            _context.Tutores.Add(tutor);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(BuscaTutorPorId), new { id = tutor.Id }, tutor);
+        }
     }
 }
