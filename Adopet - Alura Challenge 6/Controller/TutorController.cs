@@ -8,18 +8,18 @@ using Microsoft.AspNetCore.Mvc;
 namespace Adopet___Alura_Challenge_6.Controller {
     [ApiController]
     [Route("[controller]")]
-    public class TotorController : ControllerBase{
+    public class TutorController : ControllerBase{
         private AppDbContext _context;
         private IMapper _mapper;
 
-        public TotorController(IMapper mapper, AppDbContext context) {
+        public TutorController(IMapper mapper, AppDbContext context) {
             _context = context;
             _mapper = mapper;
         }
 
         [HttpPatch("{id}")]
         public IActionResult AtualizaTutorPatch(int id, JsonPatchDocument<UpdateTutorDto> patch) {
-            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.id == id);
+            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
             if (tutor == null) return NotFound();
 
             var tutorParaAtualizar = _mapper.Map<UpdateTutorDto>(tutor);
@@ -29,14 +29,14 @@ namespace Adopet___Alura_Challenge_6.Controller {
                 return ValidationProblem(ModelState);
             }
 
-            _mapper.Map<Tutor>(tutorParaAtualizar);
+            _mapper.Map(tutorParaAtualizar, tutor);
             _context.SaveChanges();
             return NoContent();
         }
 
         [HttpPut("{id}")]
         public IActionResult AtualizaTutorPatch(int id, [FromBody] UpdateTutorDto dto) {
-            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.id == id);
+            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
             if (tutor == null) return NotFound();
 
             _mapper.Map(dto, tutor);
@@ -53,8 +53,9 @@ namespace Adopet___Alura_Challenge_6.Controller {
         }
 
         [HttpGet]
-        public IEnumerable<Tutor> BuscarTutores() {
-            return _context.Tutores;
+        public IEnumerable<ReadTutorDto> BuscarTutores() {
+            var tutores = _context.Tutores;
+            return _mapper.Map<List<ReadTutorDto>>(tutores);
         }
 
         [HttpGet("{id}")]

@@ -9,6 +9,7 @@ namespace Adopet___Alura_Challenge_6.Profiles {
             CreateMap<CreateTutorDto, Tutor>();
             CreateMap<UpdateTutorDto, Tutor>();
             CreateMap<Tutor, UpdateTutorDto>();
+            CreateMap<Tutor, ReadTutorDto>();
         }
     }
 }

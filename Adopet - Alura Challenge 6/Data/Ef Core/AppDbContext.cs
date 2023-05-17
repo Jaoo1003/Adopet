@@ -8,5 +8,7 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
         }
 
         public DbSet<Tutor> Tutores { get; set; }
+        public DbSet<Pet> Pets { get; set; }
+        public DbSet<Abrigo> Abrigos { get; set; }
     }
 }
