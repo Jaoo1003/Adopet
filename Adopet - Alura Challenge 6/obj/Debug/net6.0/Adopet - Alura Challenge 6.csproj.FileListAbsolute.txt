@@ -1,0 +1,36 @@
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\appsettings.json
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Adopet - Alura Challenge 6.exe
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Adopet - Alura Challenge 6.deps.json
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Adopet - Alura Challenge 6.runtimeconfig.json
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Adopet - Alura Challenge 6.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Adopet - Alura Challenge 6.pdb
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Humanizer.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.csproj.AssemblyReference.cache
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.AssemblyInfoInputs.cache
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.AssemblyInfo.cs
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.csproj.CoreCompileInputs.cache
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\scopedcss\bundle\Adopet - Alura Challenge 6.styles.css
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.csproj.CopyComplete
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\refint\Adopet - Alura Challenge 6.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.pdb
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\Adopet - Alura Challenge 6.genruntimeconfig.cache
+C:\Users\vitoo\OneDrive\Área de Trabalho\Projetos\Adopet - Alura Challenge 6\Adopet - Alura Challenge 6\obj\Debug\net6.0\ref\Adopet - Alura Challenge 6.dll
