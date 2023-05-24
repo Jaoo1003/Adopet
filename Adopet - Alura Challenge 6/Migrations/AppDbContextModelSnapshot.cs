@@ -37,7 +37,7 @@ namespace Adopet___Alura_Challenge_6.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Abrigos");
+                    b.ToTable("Abrigos", (string)null);
                 });
 
             modelBuilder.Entity("Adopet___Alura_Challenge_6.Models.Pet", b =>
@@ -79,7 +79,7 @@ namespace Adopet___Alura_Challenge_6.Migrations
 
                     b.HasIndex("AbrigoId");
 
-                    b.ToTable("Pets");
+                    b.ToTable("Pets", (string)null);
                 });
 
             modelBuilder.Entity("Adopet___Alura_Challenge_6.Models.Tutor", b =>
@@ -98,7 +98,7 @@ namespace Adopet___Alura_Challenge_6.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tutores");
+                    b.ToTable("Tutores", (string)null);
                 });
 
             modelBuilder.Entity("Adopet___Alura_Challenge_6.Models.Pet", b =>

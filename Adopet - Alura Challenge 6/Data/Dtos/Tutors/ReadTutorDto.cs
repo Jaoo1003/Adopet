@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Adopet___Alura_Challenge_6.Models;
 
 namespace Adopet___Alura_Challenge_6.Data.Dtos.Tutors {
     public class ReadTutorDto {
