@@ -41,7 +41,7 @@ namespace Adopet___Alura_Challenge_6.Services {
         }
 
         public List<ReadPetDto> BuscaPets() {
-            List<Pet> pets = _context.Pets.ToList();
+            List<Pet> pets = _context.Pets.Where(pet => pet.Adotado == false).ToList();
             if (pets != null) return _mapper.Map<List<ReadPetDto>>(pets);
             return null;
         }
