@@ -1,4 +1,4 @@
-﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigo;
+﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigos;
 using Adopet___Alura_Challenge_6.Models;
 using AutoMapper;
 

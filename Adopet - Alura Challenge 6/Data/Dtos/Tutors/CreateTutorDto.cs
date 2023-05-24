@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Adopet___Alura_Challenge_6.Data.Dtos.Tutor {
+namespace Adopet___Alura_Challenge_6.Data.Dtos.Tutors {
     public class CreateTutorDto {
         [Required]
         public string Nome { get; set; }

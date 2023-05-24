@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection.Metadata.Ecma335;
 
-namespace Adopet___Alura_Challenge_6.Data.Dtos.Tutor {
+namespace Adopet___Alura_Challenge_6.Data.Dtos.Tutors {
     public class UpdateTutorDto {
         [Required]
         public string Nome { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Adopet___Alura_Challenge_6.Data.Dtos.Abrigo {
+namespace Adopet___Alura_Challenge_6.Data.Dtos.Abrigos {
     public class UpdateAbrigoDto {
         [Required]
         [StringLength(100, ErrorMessage = "O logradouro deve ter no máximo 100 caracteres")]

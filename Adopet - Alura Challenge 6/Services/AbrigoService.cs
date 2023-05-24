@@ -1,4 +1,4 @@
-﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigo;
+﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigos;
 using Adopet___Alura_Challenge_6.Data.Ef_Core;
 using Adopet___Alura_Challenge_6.Models;
 using AutoMapper;
@@ -13,7 +13,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             _mapper = mapper;
         }
 
-        public List<ReadAbrigoDto>? BuscaAbrigos() {
+        public List<ReadAbrigoDto> BuscaAbrigos() {
             List<Abrigo> abrigos = _context.Abrigos.ToList();
 
             if (abrigos != null) {
