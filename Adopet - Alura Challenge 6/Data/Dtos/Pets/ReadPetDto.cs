@@ -1,5 +1,5 @@
-﻿using Adopet___Alura_Challenge_6.Models;
-using Newtonsoft.Json;
+﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigos;
+using Adopet___Alura_Challenge_6.Models;
 
 namespace Adopet___Alura_Challenge_6.Data.Dtos.Pets {
     public class ReadPetDto {

@@ -33,7 +33,7 @@ public class PetController : ControllerBase{
 
     [HttpGet]
     public IActionResult BuscaPets() {
-        ICollection<ReadPetDto> pets = _service.BuscaPets();
+        IEnumerable<ReadPetDto> pets = _service.BuscaPets();
         if (pets != null) return Ok(pets);
         return NotFound("Não encontrado");
     }

@@ -40,7 +40,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return null;
         }
 
-        public List<ReadPetDto> BuscaPets() {
+        public IEnumerable<ReadPetDto> BuscaPets() {
             List<Pet> pets = _context.Pets.Where(pet => pet.Adotado == false).ToList();
             if (pets != null) return _mapper.Map<List<ReadPetDto>>(pets);
             return null;
@@ -52,8 +52,7 @@ namespace Adopet___Alura_Challenge_6.Services {
                 return Result.Fail("Não encontrado");
             }
 
-            _mapper.Map(dto, pet);
-            _context.SaveChanges();
+            Atualiza(dto, pet);
             return Result.Ok();
         }
 
@@ -63,7 +62,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return _mapper.Map<UpdatePetDto>(pet);
         }
 
-        public Result Atualiza(Pet pet, UpdatePetDto tutorToUpdate) {
+        public Result Atualiza(object pet, object tutorToUpdate) {
             _mapper.Map(tutorToUpdate, pet);
             _context.SaveChanges();
             return Result.Ok();

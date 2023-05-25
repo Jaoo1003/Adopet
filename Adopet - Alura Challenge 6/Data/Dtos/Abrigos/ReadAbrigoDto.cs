@@ -1,4 +1,5 @@
-﻿using Adopet___Alura_Challenge_6.Models;
+﻿using Adopet___Alura_Challenge_6.Data.Dtos.Pets;
+using Adopet___Alura_Challenge_6.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace Adopet___Alura_Challenge_6.Data.Dtos.Abrigos {

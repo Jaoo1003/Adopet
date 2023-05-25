@@ -1,7 +1,9 @@
 ﻿using Adopet___Alura_Challenge_6.Data.Dtos.Tutors;
 using Adopet___Alura_Challenge_6.Data.Ef_Core;
 using Adopet___Alura_Challenge_6.Models;
+using Adopet___Alura_Challenge_6.Services;
 using AutoMapper;
+using FluentResults;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,71 +11,60 @@ namespace Adopet___Alura_Challenge_6.Controller {
     [ApiController]
     [Route("[controller]")]
     public class TutorController : ControllerBase{
-        private AppDbContext _context;
-        private IMapper _mapper;
+        private TutorService _service;
 
-        public TutorController(IMapper mapper, AppDbContext context) {
-            _context = context;
-            _mapper = mapper;
+        public TutorController(TutorService service) {
+            _service = service;
         }
 
         [HttpPatch("{id}")]
         public IActionResult AtualizaTutorPatch(int id, JsonPatchDocument<UpdateTutorDto> patch) {
-            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
-            if (tutor == null) return NotFound();
-
-            var tutorParaAtualizar = _mapper.Map<UpdateTutorDto>(tutor);
+            var tutor = _service.BuscaTutorPorId(id);
+            var tutorParaAtualizar = _service.AtualizaTutorPatch(id, patch);
             patch.ApplyTo(tutorParaAtualizar, ModelState);
 
             if (!TryValidateModel(tutorParaAtualizar)) {
                 return ValidationProblem(ModelState);
             }
 
-            _mapper.Map(tutorParaAtualizar, tutor);
-            _context.SaveChanges();
-            return NoContent();
+            var salvar = _service.Atualiza(tutor, tutorParaAtualizar);
+            if (salvar.IsSuccess) return NoContent();
+            return NotFound();
         }
 
         [HttpPut("{id}")]
-        public IActionResult AtualizaTutorPatch(int id, [FromBody] UpdateTutorDto dto) {
-            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
-            if (tutor == null) return NotFound();
-
-            _mapper.Map(dto, tutor);
-            _context.SaveChanges();
-            return NoContent();
+        public IActionResult AtualizaTutorPut(int id, [FromBody] UpdateTutorDto dto) {
+            Result result = _service.AtualizaTutorPut(id, dto);
+            if(result.IsSuccess) return NoContent();
+            return NotFound();
         }
 
         [HttpPost]
         public IActionResult CadastrarTutor([FromBody] CreateTutorDto dto) {
-            var tutor = _mapper.Map<Tutor>(dto);
-            _context.Tutores.Add(tutor);
-            _context.SaveChanges();
+            var tutor = _service.CadastraTutor(dto);
             return CreatedAtAction(nameof(BuscaTutorPorId), new { id = tutor.Id }, tutor);
         }
 
         [HttpGet]
-        public IEnumerable<ReadTutorDto> BuscarTutores() {
-            var tutores = _context.Tutores;
-            return _mapper.Map<List<ReadTutorDto>>(tutores);
+        public IActionResult BuscarTutores() {
+            var tutores = _service.BuscaTutores();
+            if (tutores != null) return Ok(tutores);
+            return NotFound();
+
         }
 
         [HttpGet("{id}")]
         public IActionResult BuscaTutorPorId(int id) {
-            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
-            if (tutor == null) return NotFound();
-
-            return Ok(tutor);
+            var tutor = _service.BuscaTutorPorId(id);
+            if (tutor != null) return Ok(tutor);
+            return NotFound();
         }
 
         [HttpDelete("{id}")]
         public IActionResult DeletaTutor(int id) {
-            var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
-            if (tutor == null) return NotFound();
-
-            _context.Tutores.Remove(tutor);
-            _context.SaveChanges();
-            return NoContent();
+            var tutor = _service.DeletaTutor(id);
+            if (tutor.IsSuccess) return NoContent();
+            return NotFound();
         }
     }
 }
