@@ -17,6 +17,9 @@ public class PetController : ControllerBase{
 
     [HttpPost]
     public IActionResult AdicionaPet([FromBody] CreatePetDto dto) {
+        if (!ModelState.IsValid) {
+            return BadRequest(ModelState);
+        }
         ReadPetDto pet = _service.AdicionaPet(dto);
         return CreatedAtAction(nameof(BuscaPetPorId), new { id = pet.Id }, pet);
     }

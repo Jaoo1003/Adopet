@@ -18,6 +18,7 @@ namespace Adopet___Alura_Challenge_6.Data.Dtos.Pets {
         [Required]
         public string Endereco { get; set; }
         [Required]
+        [RegularExpression(@"\b(?:https?://|www\.)\S+\b", ErrorMessage = "A URL não é válida.")]
         public string Imagem { get; set; }
     }
 }
