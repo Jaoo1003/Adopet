@@ -1,10 +1,8 @@
 ﻿using Adopet___Alura_Challenge_6.Data.Dtos.Pets;
-using Adopet___Alura_Challenge_6.Models;
 using Adopet___Alura_Challenge_6.Services;
 using FluentResults;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Adopet___Alura_Challenge_6.Controller; 
 [ApiController]

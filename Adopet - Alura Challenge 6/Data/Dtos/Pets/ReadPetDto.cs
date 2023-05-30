@@ -12,6 +12,5 @@ namespace Adopet___Alura_Challenge_6.Data.Dtos.Pets {
         public bool Adotado { get; set; }
         public string Endereco { get; set; }
         public string Imagem { get; set; }
-        public virtual Abrigo Abrigo { get; set; }
     }
 }

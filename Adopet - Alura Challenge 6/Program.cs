@@ -17,6 +17,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<AbrigoService, AbrigoService>();
 builder.Services.AddScoped<PetService, PetService>();
+builder.Services.AddScoped<TutorService, TutorService>();
 
 var app = builder.Build();
 

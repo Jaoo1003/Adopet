@@ -36,7 +36,7 @@ namespace Adopet___Alura_Challenge_6.Controller {
             return CreatedAtAction(nameof(BuscaAbrigosPorId), new { id = readDto.Id }, readDto);
         }
 
-        [HttpPost("/adocao")]
+        [HttpPost("[controller]/adocao")]
         public IActionResult CadastraAdocao([FromBody] CreateAdocaoDto dto) {
             var result = _service.CadastraAdocao(dto);
             return Ok(result);
