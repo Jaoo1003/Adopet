@@ -24,7 +24,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return _mapper.Map<ReadPetDto>(pet);
         }
 
-        public ReadPetDto BuscaPetPorId(int id) {
+        public ReadPetDto? BuscaPetPorId(int id) {
             var pet = _context.Pets.FirstOrDefault(pet => pet.Id == id);
             if (pet != null) {
                 return _mapper.Map<ReadPetDto>(pet);
@@ -32,7 +32,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return null;
         }
 
-        public Pet BuscaPetPorIdReturnPet(int id) {
+        public Pet? BuscaPetPorIdReturnPet(int id) {
             var pet = _context.Pets.FirstOrDefault(pet => pet.Id == id);
             if (pet != null) {
                 return pet;
@@ -40,7 +40,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return null;
         }
 
-        public IEnumerable<ReadPetDto> BuscaPets() {
+        public IEnumerable<ReadPetDto>? BuscaPets() {
             List<Pet> pets = _context.Pets.Where(pet => pet.Adotado == false).ToList();
             if (pets != null) return _mapper.Map<List<ReadPetDto>>(pets);
             return null;
@@ -56,7 +56,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return Result.Ok();
         }
 
-        public UpdatePetDto AtualizaPetsPatch(int id, JsonPatchDocument<UpdatePetDto> patch) {
+        public UpdatePetDto? AtualizaPetsPatch(int id, JsonPatchDocument<UpdatePetDto> patch) {
             var pet = _context.Pets.FirstOrDefault(pet => pet.Id == id);
             if (pet == null) return null;
             return _mapper.Map<UpdatePetDto>(pet);

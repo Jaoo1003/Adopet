@@ -14,7 +14,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             _mapper = mapper;
         }
 
-        public List<ReadAbrigoDto> BuscaAbrigos() {
+        public List<ReadAbrigoDto>? BuscaAbrigos() {
             List<Abrigo> abrigos = _context.Abrigos.ToList();
 
             if (abrigos != null) {
@@ -23,7 +23,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return null;
         }
 
-        public ReadAbrigoDto BuscaAbrigoPorId(int id) {
+        public ReadAbrigoDto? BuscaAbrigoPorId(int id) {
             var abrigo = _context.Abrigos.FirstOrDefault(abrigo => abrigo.Id == id);
             if (abrigo != null) {
                 var dto = _mapper.Map<ReadAbrigoDto>(abrigo);
@@ -57,31 +57,6 @@ namespace Adopet___Alura_Challenge_6.Services {
             _context.Remove(abrigo);
             _context.SaveChanges();
             return Result.Ok();
-        }
-
-        public ReadAdocaoDto CadastraAdocao(CreateAdocaoDto dto) {
-            var adocao = _mapper.Map<Adocao>(dto);
-            _context.Add(adocao);
-
-            var pet = _context.Pets.Where(pet => pet.Id == dto.PetId).First();
-            pet.Adotado = true;
-
-            _context.SaveChanges();
-
-            return _mapper.Map<ReadAdocaoDto>(adocao);
-        }
-
-        public Result DeletaAdocao(int id) {
-            var adocao = _context.Adocoes.FirstOrDefault(adocao => adocao.Id == id);
-            if (adocao == null) return Result.Fail("Não encontrado");
-
-            _context.Remove(adocao);
-
-            Pet pet = _context.Pets.Where(pet => pet.Id == adocao.PetId).First();
-            pet.Adotado = false;
-
-            _context.SaveChanges();
-            return Result.Ok();
-        }
+        }        
     }
 }

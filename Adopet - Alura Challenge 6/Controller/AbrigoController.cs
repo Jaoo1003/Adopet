@@ -36,12 +36,6 @@ namespace Adopet___Alura_Challenge_6.Controller {
             return CreatedAtAction(nameof(BuscaAbrigosPorId), new { id = readDto.Id }, readDto);
         }
 
-        [HttpPost("[controller]/adocao")]
-        public IActionResult CadastraAdocao([FromBody] CreateAdocaoDto dto) {
-            var result = _service.CadastraAdocao(dto);
-            return Ok(result);
-        }
-
         [HttpPut("{id}")]
         public IActionResult AtualizaAbrigo(int id, [FromBody] UpdateAbrigoDto dto) {
             Result resultado = _service.AtualizaAbrigo(id, dto);
@@ -54,13 +48,6 @@ namespace Adopet___Alura_Challenge_6.Controller {
             Result resultado = _service.DeletaAbrigo(id);
             if(resultado.IsSuccess) return NoContent();
             return NotFound(resultado);
-        }
-
-        [HttpDelete("[controller]/adocao/{id}")]
-        public IActionResult DeletaAdocao(int id) {
-            Result result = _service.DeletaAdocao(id);
-            if (result.IsSuccess) return StatusCode(204, "Sucesso ao deletar adoção");
-            return NotFound("Não foi possivel deletar esta adoção");
-        }
+        }        
     }
 }

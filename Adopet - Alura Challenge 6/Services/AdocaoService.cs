@@ -38,7 +38,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return Result.Ok();
         }
 
-        public IEnumerable<ReadAdocaoDto> BuscaAdocoes() {
+        public IEnumerable<ReadAdocaoDto>? BuscaAdocoes() {
             var adocoes = _context.Adocoes;
             if (adocoes != null) {
                 return _mapper.Map<List<ReadAdocaoDto>>(adocoes);
@@ -46,12 +46,12 @@ namespace Adopet___Alura_Challenge_6.Services {
             return null;
         }
 
-        public ReadAdocaoDto BuscaAdocoesPorId(int id) {
+        public ReadAdocaoDto? BuscaAdocoesPorId(int id) {
             var adocao = _context.Adocoes.FirstOrDefault(a => a.Id == id);
             if (adocao != null) {
                 return _mapper.Map<ReadAdocaoDto>(adocao);
             }
-            return null
+            return null;
         }
     }
 }

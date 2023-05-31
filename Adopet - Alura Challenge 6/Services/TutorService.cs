@@ -15,20 +15,20 @@ namespace Adopet___Alura_Challenge_6.Services {
             _mapper = mapper;
         }
 
-        public UpdateTutorDto AtualizaTutorPatch(int id, JsonPatchDocument<UpdateTutorDto> patch) {
+        public UpdateTutorDto? AtualizaTutorPatch(int id, JsonPatchDocument<UpdateTutorDto> patch) {
             var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
             if (tutor == null) return null;
 
             return _mapper.Map<UpdateTutorDto>(tutor);
         }
 
-        public Result Atualiza(object tutor, object tutorParaAtualizar) {
+        public Result Atualiza(object? tutor, object tutorParaAtualizar) {
             _mapper.Map(tutorParaAtualizar, tutor);
             _context.SaveChanges();
             return Result.Ok();
         }
 
-        public ReadTutorDto BuscaTutorPorId(int id) {
+        public ReadTutorDto? BuscaTutorPorId(int id) {
             var tutor = _context.Tutores.FirstOrDefault(tutor => tutor.Id == id);
             if (tutor != null) {
                 return _mapper.Map<ReadTutorDto>(tutor);
@@ -52,7 +52,7 @@ namespace Adopet___Alura_Challenge_6.Services {
             return _mapper.Map<ReadTutorDto>(tutor);
         }
 
-        public IEnumerable<ReadTutorDto> BuscaTutores() {
+        public IEnumerable<ReadTutorDto>? BuscaTutores() {
             var tutores = _context.Tutores.ToList();
             if (tutores != null) {
                 return _mapper.Map<List<ReadTutorDto>>(tutores);
