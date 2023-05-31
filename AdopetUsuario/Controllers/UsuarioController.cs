@@ -1,29 +1,20 @@
 ﻿using AdopetUsuario.Data.Dtos;
-using AdopetUsuario.Models;
-using AutoMapper;
-using Microsoft.AspNetCore.Identity;
+using AdopetUsuario.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdopetUsuario.Controllers {
     [ApiController]
     [Route("[Controller]")]
     public class UsuarioController : ControllerBase{
-        private IMapper _mapper;
-        private UserManager<Usuario> _userManager;
-        public UsuarioController(IMapper mapper, UserManager<Usuario> userManager) {
-            _mapper = mapper;
-            _userManager = userManager;
+        private UsuarioService _usuarioService;
+        public UsuarioController(UsuarioService cadastroService) {
+            _usuarioService = cadastroService;
         }
 
         [HttpPost]
         public async Task<IActionResult> CadastraUsuario(CreateUsuarioDto dto) {
-            Usuario usuario = _mapper.Map<Usuario>(dto);
-
-            IdentityResult resultado = await _userManager.CreateAsync(usuario, dto.Password);
-
-            if (resultado.Succeeded) return Ok("Usuario Cadastrado");
-
-            throw new ApplicationException("Falha ao cadastrar usuário");
+            await _usuarioService.Cadastra(dto);
+            return Ok("Usuário cadastrado");
         }
     }
 }

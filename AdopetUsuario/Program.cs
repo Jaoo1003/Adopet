@@ -1,5 +1,6 @@
 using AdopetUsuario.Data;
 using AdopetUsuario.Models;
+using AdopetUsuario.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,9 @@ builder.Services.AddIdentity<Usuario, IdentityRole>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<LoginService>();
 
 var app = builder.Build();
 
