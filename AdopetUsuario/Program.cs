@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<UsuarioDbContext>(opts => opts.UseMySql(connectionString,
     ServerVersion.AutoDetect(connectionString)));
 
-builder.Services.AddIdentity<Usuario, IdentityRole>()
+builder.Services.AddIdentity<Usuario, IdentityRole<int>>()
     .AddEntityFrameworkStores<UsuarioDbContext>()
     .AddDefaultTokenProviders();
 
@@ -26,6 +26,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<LoginService>();
+builder.Services.AddScoped<TokenService>();
 
 var app = builder.Build();
 

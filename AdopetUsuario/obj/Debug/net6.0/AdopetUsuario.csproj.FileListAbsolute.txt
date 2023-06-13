@@ -41,3 +41,8 @@ C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challen
 C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\AdopetUsuario\obj\Debug\net6.0\AdopetUsuario.pdb
 C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\AdopetUsuario\obj\Debug\net6.0\AdopetUsuario.genruntimeconfig.cache
 C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\AdopetUsuario\obj\Debug\net6.0\ref\AdopetUsuario.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\AdopetUsuario\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\AdopetUsuario\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\AdopetUsuario\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\AdopetUsuario\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\AdopetUsuario\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

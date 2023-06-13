@@ -12,14 +12,18 @@ namespace AdopetUsuario.Services {
             _mapper = mapper;
             _userManager = userManager;
         }
-        public async Task Cadastra(CreateUsuarioDto dto) {
+        public async Task Cadastra(CreateUsuarioDto dto, string role) {
             Usuario usuario = _mapper.Map<Usuario>(dto);
 
-            IdentityResult resultado = await _userManager.CreateAsync(usuario, dto.Password);
+            IdentityResult resultado = await _userManager.CreateAsync(usuario, dto.Password);            
 
-            if (!resultado.Succeeded) {
+            if (resultado.Succeeded) {
                 throw new ApplicationException("Falha ao cadastrar usuário");
-            }                     
+            }
+
+            await _userManager.AddToRoleAsync(usuario, role);
+
+                        
         }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigos;
-using Adopet___Alura_Challenge_6.Data.Dtos.Adocoes;
-using Adopet___Alura_Challenge_6.Models;
 using Adopet___Alura_Challenge_6.Services;
-using AutoMapper;
 using FluentResults;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Adopet___Alura_Challenge_6.Controller {

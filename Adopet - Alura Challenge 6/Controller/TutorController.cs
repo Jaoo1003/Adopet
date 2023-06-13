@@ -1,6 +1,4 @@
 ﻿using Adopet___Alura_Challenge_6.Data.Dtos.Tutors;
-using Adopet___Alura_Challenge_6.Data.Ef_Core;
-using Adopet___Alura_Challenge_6.Models;
 using Adopet___Alura_Challenge_6.Services;
 using AutoMapper;
 using FluentResults;

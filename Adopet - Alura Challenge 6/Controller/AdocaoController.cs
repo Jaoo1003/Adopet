@@ -1,6 +1,7 @@
 ﻿using Adopet___Alura_Challenge_6.Data.Dtos.Adocoes;
 using Adopet___Alura_Challenge_6.Services;
 using FluentResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Adopet___Alura_Challenge_6.Controller {
@@ -33,6 +34,7 @@ namespace Adopet___Alura_Challenge_6.Controller {
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Abrigo")]
         public IActionResult DeletaAdocao(int id) {
             Result result = _service.DeletaAdocao(id);
             if (result.IsSuccess) return StatusCode(204, "Sucesso ao deletar adoção");
