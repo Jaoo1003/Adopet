@@ -1,44 +1,50 @@
-﻿using Adopet___Alura_Challenge_6.Data.Dtos.Adocoes;
+﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigos;
+using Adopet___Alura_Challenge_6.Data.Dtos.Adocoes;
 using Adopet___Alura_Challenge_6.Services;
+using Adopet___Alura_Challenge_6.Services.Handler;
 using FluentResults;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Adopet___Alura_Challenge_6.Controller {
+namespace Adopet___Alura_Challenge_6.Controller
+{
     [ApiController]
     [Route("[controller]")]
     public class AdocaoController : ControllerBase{
-        private AdocaoService _service;
-        public AdocaoController(AdocaoService service) {
-            _service = service;
+        private readonly IAdminService _adminService;
+        public AdocaoController(IAdminService adminService) {
+            _adminService = adminService;
         }
 
         [HttpPost]
-        public IActionResult CadastraAdocao([FromBody] CreateAdocaoDto dto) {
-            var result = _service.CadastraAdocao(dto);
-            return Ok(result);
+        public IActionResult CreateAdocao(AdocaoDto entity) {
+            _adminService.CreateAdocao(entity);
+            return NoContent();
         }
 
         [HttpGet]
-        public IActionResult BuscaAdocoes() {
-            var adocoes = _service.BuscaAdocoes();
-            if (adocoes != null) return Ok(adocoes);
-            return NotFound();
+        public IActionResult GetAllAdocoes() {
+            var adocoes = _adminService.GetAllAdocoes();
+            return Ok(adocoes);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult BuscaAdocoesPorId(int id) {
-            var adocoes = _service.BuscaAdocoesPorId(id);
-            if (adocoes != null) return Ok(adocoes);
-            return NotFound();
+        [HttpGet]
+        public IActionResult GetAdocaoById(int id) {
+            var adocao = _adminService.GetAdocoById(id);
+            return Ok(adocao);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateAdocao(AdocaoDto entity, int id) {
+            _adminService.UpdateAdocao(entity, id);
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
         [Authorize(Roles = "Abrigo")]
-        public IActionResult DeletaAdocao(int id) {
-            Result result = _service.DeletaAdocao(id);
-            if (result.IsSuccess) return StatusCode(204, "Sucesso ao deletar adoção");
-            return NotFound("Não foi possivel deletar esta adoção");
+        public IActionResult DeleteAdocaoById(int id) {
+            _adminService.DeleteAdocao(id);
+            return NoContent();
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "foc595KQqpOWrMa18XuCJVB52GB/uiJ/5FbMofecB6KZEJWucdrj12ZKQtFiPZwxehkSC5goHhi1u4/OpKIsLg==",
+  "dgSpecHash": "8H2Mr02JgO5+thQQyFGyFKzjH47BUkHB2mhU+WjnmgEFjyufFRk1KG/mGqmrv3CuHZLnoe7+vnZdolA3JM9NRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vitoo\\OneDrive\\Área de Trabalho\\estudo\\Projetos\\Adopet - Alura Challenge 6\\AdopetUsuario\\AdopetUsuario.csproj",
+  "projectFilePath": "C:\\Users\\vitoo\\OneDrive\\Área de Trabalho\\estudo\\Projetos\\Adopet - Alura Challenge 6\\AdopetUsuario\\Adopet.Usuario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitoo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\vitoo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

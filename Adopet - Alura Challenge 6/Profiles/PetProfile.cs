@@ -6,10 +6,7 @@ namespace Adopet___Alura_Challenge_6.Profiles {
     public class PetProfile : Profile{
 
         public PetProfile() {
-            CreateMap<CreatePetDto, Pet>();
-            CreateMap<Pet, ReadPetDto>();
-            CreateMap<UpdatePetDto, Pet>();
-            CreateMap<Pet, UpdatePetDto>();
+            CreateMap<PetDto, Pet>();
         }
     }
 }

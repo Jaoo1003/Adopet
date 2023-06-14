@@ -114,16 +114,23 @@ namespace AdopetUsuario.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "03407d71-6354-4085-8129-e3b0ff9ed8e9",
+                            ConcurrencyStamp = "a2ae074b-5bcc-4de3-8832-3f1c046f89b1",
                             Name = "Tutor",
                             NormalizedName = "TUTOR"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "3b98e594-6bfa-45f3-a38f-88d66948e7d7",
+                            ConcurrencyStamp = "b788a7d1-f363-407a-9625-8d80fbfe066f",
                             Name = "Abrigo",
                             NormalizedName = "ABRIGO"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ConcurrencyStamp = "b603bb3d-a64a-49fc-bce1-92ff4ebe8c40",
+                            Name = "Cadastrado",
+                            NormalizedName = "CADASTRADO"
                         });
                 });
 

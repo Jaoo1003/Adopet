@@ -17,13 +17,12 @@ namespace AdopetUsuario.Services {
 
             IdentityResult resultado = await _userManager.CreateAsync(usuario, dto.Password);            
 
-            if (resultado.Succeeded) {
+            if (!resultado.Succeeded) {
                 throw new ApplicationException("Falha ao cadastrar usuário");
             }
 
             await _userManager.AddToRoleAsync(usuario, role);
-
-                        
+            await _userManager.AddToRoleAsync(usuario, "Cadastrado");
         }
     }
 }

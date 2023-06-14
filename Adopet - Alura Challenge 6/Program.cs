@@ -1,5 +1,7 @@
 using Adopet___Alura_Challenge_6.Data.Ef_Core;
+using Adopet___Alura_Challenge_6.Data.InferfaceDao;
 using Adopet___Alura_Challenge_6.Services;
+using Adopet___Alura_Challenge_6.Services.Handler;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -18,10 +20,11 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseLazyLoadingProxies().U
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddScoped<AbrigoService, AbrigoService>();
-builder.Services.AddScoped<AdocaoService, AdocaoService>();
-builder.Services.AddScoped<PetService, PetService>();
-builder.Services.AddScoped<TutorService, TutorService>();
+builder.Services.AddTransient<IAdminService, DefaultAdminService>();
+builder.Services.AddTransient<IAbrigoDao, AbrigoDaoComEfCore>();
+builder.Services.AddTransient<IAdocaoDao, AdocaoDaoComEfCore>();
+builder.Services.AddTransient<IPetDao, PetDaoComEfCore>();
+builder.Services.AddTransient<ITutorDao, TutorDaoComEfCore>();
 
 builder.Services.AddAuthentication(auth => {
     auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

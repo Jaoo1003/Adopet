@@ -15,7 +15,8 @@ namespace AdopetUsuario.Controllers {
         [HttpPost]
         public async Task<IActionResult> Login(LoginUsuarioDto dto) {
             var token = await _loginService.Login(dto);
-            return Ok(token);
+            if (token != null) return Ok(token);
+            return StatusCode(403, "Login ou Senha incorretos");
         }
     }
 }

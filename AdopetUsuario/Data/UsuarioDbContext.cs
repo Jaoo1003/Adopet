@@ -14,7 +14,8 @@ namespace AdopetUsuario.Data {
 
             builder.Entity<IdentityRole<int>>().HasData(
                 new IdentityRole<int> { Id = 1, Name = "Tutor", NormalizedName = "TUTOR"},
-                new IdentityRole<int> { Id = 2, Name = "Abrigo", NormalizedName = "ABRIGO"}
+                new IdentityRole<int> { Id = 2, Name = "Abrigo", NormalizedName = "ABRIGO"},
+                new IdentityRole<int> { Id = 3, Name = "Cadastrado", NormalizedName = "CADASTRADO"}
                 );
         }
     }

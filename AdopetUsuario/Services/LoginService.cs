@@ -15,7 +15,7 @@ namespace AdopetUsuario.Services {
             var resultado = await _signInManager.PasswordSignInAsync(dto.Username, dto.Password, false, false);
 
             if (!resultado.Succeeded) {
-                throw new ApplicationException("Usuário não autenticado!");
+                return null;
             }
 
             var usuario = _signInManager.UserManager.Users.FirstOrDefault(user => user.NormalizedUserName == dto.Username.ToUpper());

@@ -1,68 +1,52 @@
-﻿using Adopet___Alura_Challenge_6.Data.Dtos.Tutors;
+﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigos;
+using Adopet___Alura_Challenge_6.Data.Dtos.Tutors;
 using Adopet___Alura_Challenge_6.Services;
+using Adopet___Alura_Challenge_6.Services.Handler;
 using AutoMapper;
 using FluentResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
-namespace Adopet___Alura_Challenge_6.Controller {
+namespace Adopet___Alura_Challenge_6.Controller
+{
     [ApiController]
     [Route("[controller]")]
     public class TutorController : ControllerBase{
-        private TutorService _service;
-
-        public TutorController(TutorService service) {
-            _service = service;
-        }
-
-        [HttpPatch("{id}")]
-        public IActionResult AtualizaTutorPatch(int id, JsonPatchDocument<UpdateTutorDto> patch) {
-            var tutor = _service.BuscaTutorPorId(id);
-            var tutorParaAtualizar = _service.AtualizaTutorPatch(id, patch);
-            patch.ApplyTo(tutorParaAtualizar, ModelState);
-
-            if (!TryValidateModel(tutorParaAtualizar)) {
-                return ValidationProblem(ModelState);
-            }
-
-            var salvar = _service.Atualiza(tutor, tutorParaAtualizar);
-            if (salvar.IsSuccess) return NoContent();
-            return NotFound();
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult AtualizaTutorPut(int id, [FromBody] UpdateTutorDto dto) {
-            Result result = _service.AtualizaTutorPut(id, dto);
-            if(result.IsSuccess) return NoContent();
-            return NotFound();
+        private readonly IAdminService _adminService;
+        public TutorController(IAdminService adminService) {
+            _adminService = adminService;
         }
 
         [HttpPost]
-        public IActionResult CadastrarTutor([FromBody] CreateTutorDto dto) {
-            var tutor = _service.CadastraTutor(dto);
-            return CreatedAtAction(nameof(BuscaTutorPorId), new { id = tutor.Id }, tutor);
+        public IActionResult CreateTutor(TutorDto entity) {
+            _adminService.CreateTutor(entity);
+            return NoContent();
         }
 
         [HttpGet]
-        public IActionResult BuscarTutores() {
-            var tutores = _service.BuscaTutores();
-            if (tutores != null) return Ok(tutores);
-            return NotFound();
-
+        public IActionResult GetAllTutores() {
+            var tutores = _adminService.GetAllTutor();
+            return Ok(tutores);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult BuscaTutorPorId(int id) {
-            var tutor = _service.BuscaTutorPorId(id);
-            if (tutor != null) return Ok(tutor);
-            return NotFound();
+        [HttpGet]
+        public IActionResult GetTutorById(int id) {
+            var tutor = _adminService.GetTutorById(id);
+            return Ok(tutor);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateTutorById(TutorDto entity, int id) {
+            _adminService.UpdateTutor(entity, id);
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeletaTutor(int id) {
-            var tutor = _service.DeletaTutor(id);
-            if (tutor.IsSuccess) return NoContent();
-            return NotFound();
+        public IActionResult DeleteTutorById(int id) {
+            _adminService.DeleteTutor(id);
+            return NoContent();
         }
     }
 }

@@ -6794,9 +6794,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vitoo\\OneDrive\\Área de Trabalho\\estudo\\Projetos\\Adopet - Alura Challenge 6\\Adopet - Alura Challenge 6\\Adopet - Alura Challenge 6.csproj",
-      "projectName": "Adopet - Alura Challenge 6",
-      "projectPath": "C:\\Users\\vitoo\\OneDrive\\Área de Trabalho\\estudo\\Projetos\\Adopet - Alura Challenge 6\\Adopet - Alura Challenge 6\\Adopet - Alura Challenge 6.csproj",
+      "projectUniqueName": "C:\\Users\\vitoo\\OneDrive\\Área de Trabalho\\estudo\\Projetos\\Adopet - Alura Challenge 6\\Adopet - Alura Challenge 6\\Adopet.csproj",
+      "projectName": "Adopet",
+      "projectPath": "C:\\Users\\vitoo\\OneDrive\\Área de Trabalho\\estudo\\Projetos\\Adopet - Alura Challenge 6\\Adopet - Alura Challenge 6\\Adopet.csproj",
       "packagesPath": "C:\\Users\\vitoo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\vitoo\\OneDrive\\Área de Trabalho\\estudo\\Projetos\\Adopet - Alura Challenge 6\\Adopet - Alura Challenge 6\\obj\\",
       "projectStyle": "PackageReference",

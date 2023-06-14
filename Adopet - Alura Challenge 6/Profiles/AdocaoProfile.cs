@@ -5,8 +5,7 @@ using AutoMapper;
 namespace Adopet___Alura_Challenge_6.Profiles {
     public class AdocaoProfile : Profile{
         public AdocaoProfile() {
-            CreateMap<CreateAdocaoDto, Adocao>();
-            CreateMap<Adocao, ReadAdocaoDto>();
+            CreateMap<AdocaoDto, Adocao>();
         }
     }
 }

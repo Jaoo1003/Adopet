@@ -24,9 +24,9 @@ builder.Services.AddIdentity<Usuario, IdentityRole<int>>()
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddScoped<UsuarioService>();
-builder.Services.AddScoped<LoginService>();
-builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<UsuarioService, UsuarioService>();
+builder.Services.AddScoped<LoginService, LoginService>();
+builder.Services.AddScoped<TokenService, TokenService>();
 
 var app = builder.Build();
 
