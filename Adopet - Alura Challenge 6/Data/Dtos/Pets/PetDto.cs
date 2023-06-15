@@ -3,7 +3,7 @@
 namespace Adopet___Alura_Challenge_6.Data.Dtos.Pets {
     public class PetDto {
         [Required]
-        public int AbrigoId { get; set; }
+        public int? AbrigoId { get; set; } = null;
         [Required]
         public string Nome { get; set; }
         [Required]

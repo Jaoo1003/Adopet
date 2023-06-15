@@ -14,9 +14,13 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
         }
 
         public void Create(AdocaoDto entity) {
-            Abrigo abrigo = _mapper.Map<Abrigo>(entity);
-            _context.Add(abrigo);
-            _context.SaveChanges();
+
+            if (!VerifyIfTutorAndPetExists(entity.TutorId, entity.PetId)) {
+                throw new ArgumentException("tutor e/ou pet inexistentes");
+            }
+            Adocao adocao = _mapper.Map<Adocao>(entity);
+            _context.Add(adocao);
+            _context.SaveChanges();            
         }
 
         public void Delete(int id) {
@@ -39,6 +43,14 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             Adocao adocao = GetById(id);
             _mapper.Map(entity, adocao);
             _context.SaveChanges();
+        }
+
+        public bool VerifyIfTutorAndPetExists(int? tutorId, int? petId) {
+            var tutor = _context.Tutores.Find(tutorId);
+            var pet = _context.Pets.Find(petId);
+            if(tutor != null && pet != null) return true;
+
+            return false;
         }
     }
 }

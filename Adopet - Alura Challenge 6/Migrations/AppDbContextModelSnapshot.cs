@@ -58,6 +58,11 @@ namespace Adopet___Alura_Challenge_6.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PetId")
+                        .IsUnique();
+
+                    b.HasIndex("TutorId");
+
                     b.ToTable("Adocoes");
                 });
 
@@ -122,6 +127,25 @@ namespace Adopet___Alura_Challenge_6.Migrations
                     b.ToTable("Tutores");
                 });
 
+            modelBuilder.Entity("Adopet___Alura_Challenge_6.Models.Adocao", b =>
+                {
+                    b.HasOne("Adopet___Alura_Challenge_6.Models.Pet", "Pet")
+                        .WithOne("Adocao")
+                        .HasForeignKey("Adopet___Alura_Challenge_6.Models.Adocao", "PetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Adopet___Alura_Challenge_6.Models.Tutor", "Tutor")
+                        .WithMany("Adocao")
+                        .HasForeignKey("TutorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pet");
+
+                    b.Navigation("Tutor");
+                });
+
             modelBuilder.Entity("Adopet___Alura_Challenge_6.Models.Pet", b =>
                 {
                     b.HasOne("Adopet___Alura_Challenge_6.Models.Abrigo", "Abrigo")
@@ -136,6 +160,17 @@ namespace Adopet___Alura_Challenge_6.Migrations
             modelBuilder.Entity("Adopet___Alura_Challenge_6.Models.Abrigo", b =>
                 {
                     b.Navigation("Pets");
+                });
+
+            modelBuilder.Entity("Adopet___Alura_Challenge_6.Models.Pet", b =>
+                {
+                    b.Navigation("Adocao")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Adopet___Alura_Challenge_6.Models.Tutor", b =>
+                {
+                    b.Navigation("Adocao");
                 });
 #pragma warning restore 612, 618
         }

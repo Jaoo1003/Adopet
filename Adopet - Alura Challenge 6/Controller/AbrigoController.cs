@@ -1,6 +1,5 @@
 ﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigos;
 using Adopet___Alura_Challenge_6.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Adopet___Alura_Challenge_6.Controller
@@ -25,7 +24,7 @@ namespace Adopet___Alura_Challenge_6.Controller
             return Ok(abrigos);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetAbrigoById(int id) {
             var abrigo = _adminService.GetAbrigoById(id);
             return Ok(abrigo);

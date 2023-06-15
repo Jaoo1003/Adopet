@@ -31,7 +31,7 @@ namespace Adopet___Alura_Challenge_6.Controller
             return Ok(tutores);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetTutorById(int id) {
             var tutor = _adminService.GetTutorById(id);
             return Ok(tutor);

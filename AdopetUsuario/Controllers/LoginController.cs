@@ -1,22 +1,22 @@
-﻿using AdopetUsuario.Data.Dtos;
-using AdopetUsuario.Services;
+﻿using Adopet.Usuario.Services;
+using AdopetUsuario.Data.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AdopetUsuario.Controllers {
+namespace AdopetUsuario.Controllers
+{
     [ApiController]
     [Route("[controller]")]
     public class LoginController : ControllerBase{
-        private LoginService _loginService;
+        private readonly IAdminUserService _adminUserService;
 
-        public LoginController(LoginService loginService) {
-            _loginService = loginService;
+        public LoginController(IAdminUserService adminUserService) {
+            _adminUserService = adminUserService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginUsuarioDto dto) {
-            var token = await _loginService.Login(dto);
-            if (token != null) return Ok(token);
-            return StatusCode(403, "Login ou Senha incorretos");
+        public async Task<ObjectResult> Login(LoginUsuarioDto dto) {
+            var token = await _adminUserService.Login(dto);
+            return token;            
         }
     }
 }

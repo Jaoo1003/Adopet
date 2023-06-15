@@ -1,6 +1,8 @@
-using AdopetUsuario.Data;
+using Adopet.Usuario.Data.EfCore;
+using Adopet.Usuario.Data.InterfaceDao;
+using Adopet.Usuario.Services;
+using Adopet.Usuario.Services.Handler;
 using AdopetUsuario.Models;
-using AdopetUsuario.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,14 +20,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<UsuarioDbContext>(opts => opts.UseMySql(connectionString,
     ServerVersion.AutoDetect(connectionString)));
 
-builder.Services.AddIdentity<Usuario, IdentityRole<int>>()
+builder.Services.AddIdentity<User, IdentityRole<int>>()
     .AddEntityFrameworkStores<UsuarioDbContext>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddScoped<UsuarioService, UsuarioService>();
-builder.Services.AddScoped<LoginService, LoginService>();
+builder.Services.AddTransient<IAdminUserService, DefaultAdminUserService>();
+builder.Services.AddTransient<ILoginDao, LoginDaoComEfCore>();
+builder.Services.AddTransient<ISigninDao, SigninDaoComEfCore>();
 builder.Services.AddScoped<TokenService, TokenService>();
 
 var app = builder.Build();

@@ -17,7 +17,7 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
 
         public void Create(AbrigoDto entity) {
             Abrigo abrigo = _mapper.Map<Abrigo>(entity);
-            _context.Add(entity);
+            _context.Add(abrigo);
             _context.SaveChanges();
         }
 

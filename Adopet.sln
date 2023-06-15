@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adopet.Usuario", "AdopetUsu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "testes", "testes", "{0C59EBF3-7A98-4448-AA2D-29EAE530155C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adopet.Tests", "Adopet_tests\Adopet.Tests.csproj", "{15EA6564-FD0C-40A9-8635-10613CD78F85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adopet.Tests", "Adopet_tests\Adopet.Tests.csproj", "{15EA6564-FD0C-40A9-8635-10613CD78F85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

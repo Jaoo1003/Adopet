@@ -2,8 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace AdopetUsuario.Models {
-    public class Usuario : IdentityUser<int>{
+    public class User : IdentityUser<int>{
 
-        public Usuario() : base() { }
+        public User() : base() { }
     }
 }

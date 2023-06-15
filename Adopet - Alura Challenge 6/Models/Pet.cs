@@ -13,4 +13,6 @@ public class Pet {
     public string Imagem { get; set; }
     [JsonIgnore]
     public virtual Abrigo Abrigo { get; set; }
+    [JsonIgnore]
+    public virtual Adocao Adocao { get; set; }
 }

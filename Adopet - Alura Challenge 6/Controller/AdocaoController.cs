@@ -1,8 +1,5 @@
-﻿using Adopet___Alura_Challenge_6.Data.Dtos.Abrigos;
-using Adopet___Alura_Challenge_6.Data.Dtos.Adocoes;
+﻿using Adopet___Alura_Challenge_6.Data.Dtos.Adocoes;
 using Adopet___Alura_Challenge_6.Services;
-using Adopet___Alura_Challenge_6.Services.Handler;
-using FluentResults;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,7 +25,7 @@ namespace Adopet___Alura_Challenge_6.Controller
             return Ok(adocoes);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetAdocaoById(int id) {
             var adocao = _adminService.GetAdocoById(id);
             return Ok(adocao);

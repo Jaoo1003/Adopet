@@ -1,13 +1,15 @@
 ﻿using AdopetUsuario.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace AdopetUsuario.Services {
-    public class TokenService {
-        public string GenerateToken(Usuario usuario, string role) {
+namespace Adopet.Usuario.Services.Handler
+{
+    public class TokenService
+    {
+        public string GenerateToken(User usuario, string role)
+        {
             Claim[] claims = new Claim[] {
                 new Claim(ClaimTypes.Name, usuario.UserName),
                 new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
