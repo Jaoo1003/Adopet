@@ -3,6 +3,7 @@ using Adopet___Alura_Challenge_6.Data.InferfaceDao;
 using Adopet___Alura_Challenge_6.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc.Razor.TagHelpers;
 
 namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
     public class TutorDaoComEfCore : ITutorDao {
@@ -14,33 +15,37 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             _mapper = mapper;
         }
 
-        public void Create(TutorDto entity) {
+        public bool Create(TutorDto entity) {
             Tutor tutor = _mapper.Map<Tutor>(entity);
             _context.Add(tutor);
             _context.SaveChanges();
+            return true;
         }
 
-        public void Delete(int id) {
+        public bool Delete(int id) {
             Tutor tutor = GetById(id);
-            if (tutor == null) {
-                throw new ArgumentException("Tutor Não Encontrado");
-            }
             _context.Remove(tutor);
             _context.SaveChanges();
+            return true;
         }
 
         public IEnumerable<Tutor> GetAll() {
-            return _context.Tutores;
+            return _context.Tutores.ToList();
         }
 
         public Tutor? GetById(int id) {
-            return _context.Tutores.Find(id);
+            var tutor = _context.Tutores.Find(id);
+            if (tutor == null) {
+                throw new ArgumentException("Tutor Não Encontrado");
+            }
+            return tutor;
         }
 
-        public void Update(TutorDto entity, int id) {
+        public bool Update(TutorDto entity, int id) {
             Tutor tutor = GetById(id);
             _mapper.Map(entity, tutor);
             _context.SaveChanges();
+            return true;
         }
 
         public void UpdatePatch(int id, JsonPatchDocument<TutorDto> tutor) {

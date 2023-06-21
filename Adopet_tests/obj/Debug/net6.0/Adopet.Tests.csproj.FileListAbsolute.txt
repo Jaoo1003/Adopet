@@ -133,3 +133,6 @@ C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challen
 C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\Adopet_tests\obj\Debug\net6.0\Adopet.Tests.pdb
 C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\Adopet_tests\obj\Debug\net6.0\Adopet.Tests.genruntimeconfig.cache
 C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\Adopet_tests\obj\Debug\net6.0\ref\Adopet.Tests.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\Adopet_tests\bin\Debug\net6.0\MockQueryable.Core.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\Adopet_tests\bin\Debug\net6.0\MockQueryable.EntityFrameworkCore.dll
+C:\Users\vitoo\OneDrive\Área de Trabalho\estudo\Projetos\Adopet - Alura Challenge 6\Adopet_tests\bin\Debug\net6.0\MockQueryable.Moq.dll

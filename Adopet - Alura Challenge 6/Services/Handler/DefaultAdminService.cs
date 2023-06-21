@@ -28,14 +28,14 @@ namespace Adopet___Alura_Challenge_6.Services.Handler {
         public Abrigo GetAbrigoById(int id) {
             return _abrigoDao.GetById(id);
         }
-        public void CreateAbrigo(AbrigoDto abrigo) {
-            _abrigoDao.Create(abrigo);
+        public bool CreateAbrigo(AbrigoDto abrigo) {
+            return _abrigoDao.Create(abrigo);
         }
-        public void UpdateAbrigo(AbrigoDto abrigo, int id) {
-            _abrigoDao.Update(abrigo, id);
+        public bool UpdateAbrigo(AbrigoDto abrigo, int id) {
+            return _abrigoDao.Update(abrigo, id);
         }
-        public void DeleteAbrigo(int id) {
-            _abrigoDao.Delete(id);
+        public bool DeleteAbrigo(int id) {
+            return _abrigoDao.Delete(id);
         }
 
         #endregion
@@ -48,14 +48,14 @@ namespace Adopet___Alura_Challenge_6.Services.Handler {
         public Adocao GetAdocoById(int id) {
             return _adocaoDao.GetById(id);
         }
-        public void CreateAdocao(AdocaoDto adocao) {
-            _adocaoDao.Create(adocao);
+        public bool CreateAdocao(AdocaoDto adocao) {
+            return _adocaoDao.Create(adocao);
         }
-        public void UpdateAdocao(AdocaoDto adocao, int id) {
-            _adocaoDao.Update(adocao, id);
+        public bool UpdateAdocao(AdocaoDto adocao, int id) {
+            return _adocaoDao.Update(adocao, id);
         }
-        public void DeleteAdocao(int id) {
-            _adocaoDao.Delete(id);
+        public bool DeleteAdocao(int id) {
+            return _adocaoDao.Delete(id);
         }
 
         #endregion
@@ -68,14 +68,14 @@ namespace Adopet___Alura_Challenge_6.Services.Handler {
         public Pet GetPetById(int id) {
             return _petDao.GetById(id);
         }
-        public void CreatePet(PetDto pet) {
-            _petDao.Create(pet);
+        public bool CreatePet(PetDto pet) {
+            return _petDao.Create(pet);
         }
-        public void UpdatePet(PetDto pet, int id) {
-            _petDao.Update(pet, id);
+        public bool UpdatePet(PetDto pet, int id) {
+            return _petDao.Update(pet, id);
         }
-        public void DeletePet(int id) {
-            _petDao.Delete(id);
+        public bool DeletePet(int id) {
+            return _petDao.Delete(id);
         }
 
         #endregion
@@ -88,14 +88,14 @@ namespace Adopet___Alura_Challenge_6.Services.Handler {
         public Tutor GetTutorById(int id) {
             return _torDao.GetById(id);
         }
-        public void CreateTutor(TutorDto tutor) {
-            _torDao.Create(tutor);
+        public bool CreateTutor(TutorDto tutor) {
+            return _torDao.Create(tutor);
         }
-        public void UpdateTutor(TutorDto tutor, int id) {
-            _torDao.Update(tutor, id);
+        public bool UpdateTutor(TutorDto tutor, int id) {
+            return _torDao.Update(tutor, id);
         }
-        public void DeleteTutor(int id) {
-            _torDao.Delete(id);
+        public bool DeleteTutor(int id) {
+            return _torDao.Delete(id);
         }
 
         #endregion  

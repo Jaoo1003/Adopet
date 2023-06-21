@@ -14,31 +14,39 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             _mapper = mapper;
         }
 
-        public void Create(PetDto entity) {
+        public bool Create(PetDto entity) {
             Pet pet = _mapper.Map<Pet>(entity);
             _context.Add(pet);
             _context.SaveChanges();
+            return true;
         }
 
-        public void Delete(int id) {
+        public bool Delete(int id) {
             Pet pet = GetById(id);
-            if (pet == null) {
-                throw new ArgumentException("Pet Não Encontrado");
-            }
+            _context.Remove(pet);
+            _context.SaveChanges();
+            return true;
         }
 
         public IEnumerable<Pet> GetAll() {
-            return _context.Pets;
+            return _context.Pets.ToList();
         }
 
         public Pet GetById(int id) {
-            return _context.Pets.Find(id);
+            var pet =  _context.Pets.Find(id);
+
+            if (pet == null) {
+                throw new ArgumentException("Pet Não Encontrado");
+            }
+
+            return pet;
         }
 
-        public void Update(PetDto entity, int id) {
+        public bool Update(PetDto entity, int id) {
             Pet pet = GetById(id);
             _mapper.Map(entity, pet);
             _context.SaveChanges();
+            return true;
         }
 
         public void UpdatePatch(int id, JsonPatchDocument<PetDto> pet) {

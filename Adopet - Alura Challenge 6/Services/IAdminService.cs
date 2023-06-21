@@ -16,17 +16,17 @@ namespace Adopet___Alura_Challenge_6.Services {
         Adocao GetAdocoById(int id);
         Pet GetPetById(int id);
         Tutor GetTutorById(int id);
-        void CreateAbrigo(AbrigoDto abrigo);
-        void UpdateAbrigo(AbrigoDto abrigo, int id);
-        void DeleteAbrigo(int id);
-        void CreateAdocao(AdocaoDto adocao);
-        void UpdateAdocao(AdocaoDto adocao, int id);
-        void DeleteAdocao(int id);
-        void CreatePet(PetDto pet);
-        void UpdatePet(PetDto pet, int id);
-        void DeletePet(int id);
-        void CreateTutor(TutorDto tutor);
-        void UpdateTutor(TutorDto tutor, int id);
-        void DeleteTutor(int id);
+        bool CreateAbrigo(AbrigoDto abrigo);
+        bool UpdateAbrigo(AbrigoDto abrigo, int id);
+        bool DeleteAbrigo(int id);
+        bool CreateAdocao(AdocaoDto adocao);
+        bool UpdateAdocao(AdocaoDto adocao, int id);
+        bool DeleteAdocao(int id);
+        bool CreatePet(PetDto pet);
+        bool UpdatePet(PetDto pet, int id);
+        bool DeletePet(int id);
+        bool CreateTutor(TutorDto tutor);
+        bool UpdateTutor(TutorDto tutor, int id);
+        bool DeleteTutor(int id);
     }
 }

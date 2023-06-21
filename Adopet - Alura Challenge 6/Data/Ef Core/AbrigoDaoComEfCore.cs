@@ -2,7 +2,6 @@
 using Adopet___Alura_Challenge_6.Data.InferfaceDao;
 using Adopet___Alura_Challenge_6.Models;
 using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
     public class AbrigoDaoComEfCore : IAbrigoDao {
@@ -15,19 +14,18 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             _mapper = mapper;
         }
 
-        public void Create(AbrigoDto entity) {
+        public bool Create(AbrigoDto entity) {
             Abrigo abrigo = _mapper.Map<Abrigo>(entity);
             _context.Add(abrigo);
             _context.SaveChanges();
+            return true;
         }
 
-        public void Delete(int id) {
+        public bool Delete(int id) {
             Abrigo abrigo = GetById(id);
-            if(abrigo == null) {
-                throw new ArgumentException("Abrigo Não Encontrado");
-            }
             _context.Remove(abrigo);
             _context.SaveChanges();
+            return true;
         }
 
         public IEnumerable<Abrigo> GetAll() {
@@ -35,13 +33,19 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
         }
 
         public Abrigo? GetById(int id) {
-            return _context.Abrigos.Find(id);
+            var abrigo = _context.Abrigos.Find(id);
+            if (abrigo == null) {
+                throw new ArgumentException("Abrigo Não Encontrado");
+            }
+
+            return abrigo;
         }
 
-        public void Update(AbrigoDto entity, int id) {
-            Abrigo abrigo = GetById(id);
+        public bool Update(AbrigoDto entity, int id) {
+            Abrigo abrigo = GetById(id);            
             _mapper.Map(entity, abrigo);
             _context.SaveChanges();
+            return true;
         }
     }
 }
