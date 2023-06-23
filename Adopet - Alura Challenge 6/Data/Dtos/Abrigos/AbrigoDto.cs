@@ -6,7 +6,7 @@ namespace Adopet___Alura_Challenge_6.Data.Dtos.Abrigos {
         [Required]
         public string Logradouro { get; set; }
         [Required]
-        public int Numero { get; set; }
+        public int? Numero { get; set; } = null;
         [Required]
         public string Estado { get; set; }
     }

@@ -2,6 +2,7 @@
 using Adopet___Alura_Challenge_6.Data.InferfaceDao;
 using Adopet___Alura_Challenge_6.Models;
 using AutoMapper;
+using Castle.Core.Internal;
 
 namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
     public class AbrigoDaoComEfCore : IAbrigoDao {
@@ -15,6 +16,11 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
         }
 
         public bool Create(AbrigoDto entity) {
+
+            if (!ValidateObjectModelStateForTests(entity)) {
+                throw new ArgumentException("Abrigo não Criado! Verifique se todos os campos foram preenchidos corretamente");
+            }
+
             Abrigo abrigo = _mapper.Map<Abrigo>(entity);
             _context.Add(abrigo);
             _context.SaveChanges();
@@ -42,9 +48,19 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
         }
 
         public bool Update(AbrigoDto entity, int id) {
-            Abrigo abrigo = GetById(id);            
+            if (!ValidateObjectModelStateForTests(entity)) {
+                throw new ArgumentException("Verifique se Todos os campos foram preenchidos corretamente!");
+            }
+            Abrigo abrigo = GetById(id);
             _mapper.Map(entity, abrigo);
             _context.SaveChanges();
+            return true;
+        }
+
+        private bool ValidateObjectModelStateForTests(AbrigoDto entity) {
+            if (string.IsNullOrEmpty(entity.Logradouro) || entity.Numero == null || string.IsNullOrEmpty(entity.Estado)) {
+                return false;
+            }
             return true;
         }
     }
