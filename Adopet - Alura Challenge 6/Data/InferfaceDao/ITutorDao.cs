@@ -7,6 +7,6 @@ namespace Adopet___Alura_Challenge_6.Data.InferfaceDao
 {
     public interface ITutorDao : ICommand<TutorDto>, IQuery<Tutor>
     {
-        void UpdatePatch(int id, JsonPatchDocument<TutorDto> tutor);
+        bool UpdatePatch(int id, JsonPatchDocument<TutorDto> tutor);
     }
 }

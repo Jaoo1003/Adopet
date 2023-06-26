@@ -3,6 +3,7 @@ using Adopet___Alura_Challenge_6.Data.Dtos.Pets;
 using Adopet___Alura_Challenge_6.Data.Ef_Core;
 using Adopet___Alura_Challenge_6.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 using MockQueryable.Moq;
 using Moq;
@@ -177,6 +178,20 @@ namespace Adopet.Tests.Services {
             //Assert
             var result = Assert.Throws<ArgumentException>(() => petDao.Update(pet, 1));
             Assert.Equal("Certifique-se de que todos os campos foram preenchidos corretamente", result.Message);
+        }
+
+        [Fact]
+        public void Patch_PatchPet() {
+
+            //Arrange
+            mockDbContext.Setup(x => x.Pets.Find(1)).Returns(TestDataHelper.FakePetList().Find(p => p.Id == 1));
+            var jsonPatchDocument = new JsonPatchDocument<PetDto>();
+
+            //Act
+            var petDao = CreatePetDaoComEfCoreObject();
+            var result = petDao.UpdatePatch(1, jsonPatchDocument); ;
+
+            Assert.True(result);
         }
 
         [Fact]

@@ -6,6 +6,6 @@ namespace Adopet___Alura_Challenge_6.Data.InferfaceDao
 {
     public interface IPetDao : ICommand<PetDto>, IQuery<Pet>
     {
-        void UpdatePatch(int id, JsonPatchDocument<PetDto> pet);
+        bool UpdatePatch(int id, JsonPatchDocument<PetDto> pet);
     }
 }

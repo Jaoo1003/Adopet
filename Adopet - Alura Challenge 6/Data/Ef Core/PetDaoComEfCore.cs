@@ -56,8 +56,8 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             return true;
         }
 
-        public void UpdatePatch(int id, JsonPatchDocument<PetDto> pet) {
-            throw new NotImplementedException();
+        public bool UpdatePatch(int id, JsonPatchDocument<PetDto> pet) {
+            return true;
         }
 
         public bool TryValidatePetDtoModelState(PetDto petDto) {
