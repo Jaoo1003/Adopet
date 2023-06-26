@@ -9,13 +9,13 @@ using Moq;
 
 namespace Adopet.Tests.Services
 {
-    public class AdopetServiceTests {
+    public class AbrigoServiceTests {
         private readonly Mock<AppDbContext> mockDbContext;
-        private readonly Mock<DbSet<Abrigo>> mock;
+        private readonly Mock<DbSet<Abrigo>> mockSetAbrigo;
 
-        public AdopetServiceTests() {
+        public AbrigoServiceTests() {
             mockDbContext = new Mock<AppDbContext>();
-            mock = TestDataHelper.FakeAbrigoList().BuildMock().BuildMockDbSet();            
+            mockSetAbrigo = TestDataHelper.FakeAbrigoList().BuildMock().BuildMockDbSet();            
         }
 
         #region AbrigoTests
@@ -46,7 +46,7 @@ namespace Adopet.Tests.Services
         public void Get_GetAllAbrigos() {
 
             //Arrange
-            mockDbContext.Setup(x => x.Abrigos).Returns(mock.Object);
+            mockDbContext.Setup(x => x.Abrigos).Returns(mockSetAbrigo.Object);
 
             //Act
             var abrigoDao = CreateAbrigoDaoEfCoreObject();

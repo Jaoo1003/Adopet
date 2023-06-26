@@ -8,7 +8,7 @@ namespace Adopet___Alura_Challenge_6.Data.Dtos.Pets {
         public string Nome { get; set; }
         [Required]
         [Range(1, 50, ErrorMessage = "A idade do pet deve ser entre 0 e 50")]
-        public int Idade { get; set; }
+        public int? Idade { get; set; } = null;
         [Required]
         public string Porte { get; set; }
         [Required]

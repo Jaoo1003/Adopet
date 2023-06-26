@@ -44,6 +44,9 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
         }
 
         public bool Update(AdocaoDto entity, int id) {
+            if (!TryValidateAdocaoDtoModelState(entity)) {
+                throw new ArgumentException("Verifique se os campos PetId e TutorId foram preenchidos corretamente");
+            }
             Adocao adocao = GetById(id);
             
             _mapper.Map(entity, adocao);
@@ -57,6 +60,13 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             if(tutor != null && pet != null) return true;
 
             return false;
+        }
+
+        public bool TryValidateAdocaoDtoModelState(AdocaoDto entity) {
+            if (entity.TutorId == null || entity.PetId == null) {
+                return false;
+            }
+            return true;
         }
     }
 }
