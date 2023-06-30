@@ -19,9 +19,9 @@ namespace Adopet___Alura_Challenge_6.Controller
             return NoContent();
         }
 
-        [HttpGet]
-        public IActionResult GetAllAdocoes() {
-            var adocoes = _adminService.GetAllAdocoes();
+        [HttpGet("page/{skip:int}")]
+        public IActionResult GetAllAdocoes(int skip) {
+            var adocoes = _adminService.GetAllAdocoes(skip);
             return Ok(adocoes);
         }
 

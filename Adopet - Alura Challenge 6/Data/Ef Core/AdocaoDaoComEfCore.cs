@@ -30,8 +30,8 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             return true;
         }
 
-        public IEnumerable<Adocao> GetAll() {
-            return _context.Adocoes.ToList();
+        public IEnumerable<Adocao> GetAll(int skip) {
+            return _context.Adocoes.Skip(skip * 10).Take(10);
         }
 
         public Adocao? GetById(int id) {

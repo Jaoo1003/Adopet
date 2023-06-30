@@ -8,10 +8,10 @@ using Newtonsoft.Json.Bson;
 namespace Adopet___Alura_Challenge_6.Services {
     public interface IAdminService {
 
-        IEnumerable<Abrigo> GetAllAbrigos();
-        IEnumerable<Adocao> GetAllAdocoes();
-        IEnumerable<Pet> GetAllPets();
-        IEnumerable<Tutor> GetAllTutor();
+        IEnumerable<Abrigo> GetAllAbrigos(int skip);
+        IEnumerable<Adocao> GetAllAdocoes(int skip);
+        IEnumerable<Pet> GetAllPets(int skip);
+        IEnumerable<Tutor> GetAllTutor(int skip);
         Abrigo GetAbrigoById(int id);
         Adocao GetAdocoById(int id);
         Pet GetPetById(int id);

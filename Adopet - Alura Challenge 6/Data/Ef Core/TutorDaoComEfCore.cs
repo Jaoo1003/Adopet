@@ -4,6 +4,7 @@ using Adopet___Alura_Challenge_6.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc.Razor.TagHelpers;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
     public class TutorDaoComEfCore : ITutorDao {
@@ -30,8 +31,8 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             return true;
         }
 
-        public IEnumerable<Tutor> GetAll() {
-            return _context.Tutores.ToList();
+        public IEnumerable<Tutor> GetAll(int skip) {
+            return _context.Tutores.Skip(skip * 10).Take(10);
         }
 
         public Tutor? GetById(int id) {

@@ -34,8 +34,9 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             return true;
         }
 
-        public IEnumerable<Abrigo> GetAll() {
-            return _context.Abrigos;
+        public IEnumerable<Abrigo> GetAll(int skip) {
+            var datas = _context.Abrigos.Skip(skip * 10).Take(10);
+            return datas;
         }
 
         public Abrigo? GetById(int id) {

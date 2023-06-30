@@ -17,9 +17,9 @@ public class PetController : ControllerBase{
         return NoContent();
     }
 
-    [HttpGet]
-    public IActionResult GetAllPets() {
-        var pets = _adminService.GetAllPets();
+    [HttpGet("page/{skip:int}")]
+    public IActionResult GetAllPets(int skip) {
+        var pets = _adminService.GetAllPets(skip);
         return Ok(pets);
     }
 

@@ -22,8 +22,8 @@ namespace Adopet___Alura_Challenge_6.Services.Handler {
 
         #region Abrigo
 
-        public IEnumerable<Abrigo> GetAllAbrigos() {
-            return _abrigoDao.GetAll();
+        public IEnumerable<Abrigo> GetAllAbrigos(int skip) {
+            return _abrigoDao.GetAll(skip);
         }
         public Abrigo GetAbrigoById(int id) {
             return _abrigoDao.GetById(id);
@@ -42,8 +42,8 @@ namespace Adopet___Alura_Challenge_6.Services.Handler {
 
         #region Adocao
 
-        public IEnumerable<Adocao> GetAllAdocoes() {
-            return _adocaoDao.GetAll();
+        public IEnumerable<Adocao> GetAllAdocoes(int skip) {
+            return _adocaoDao.GetAll(skip);
         }
         public Adocao GetAdocoById(int id) {
             return _adocaoDao.GetById(id);
@@ -62,8 +62,8 @@ namespace Adopet___Alura_Challenge_6.Services.Handler {
 
         #region Pet
         
-        public IEnumerable<Pet> GetAllPets() {
-            return _petDao.GetAll();
+        public IEnumerable<Pet> GetAllPets(int skip) {
+            return _petDao.GetAll(skip);
         }
         public Pet GetPetById(int id) {
             return _petDao.GetById(id);
@@ -82,8 +82,8 @@ namespace Adopet___Alura_Challenge_6.Services.Handler {
 
         #region Tutor
 
-        public IEnumerable<Tutor> GetAllTutor() {
-            return _torDao.GetAll();
+        public IEnumerable<Tutor> GetAllTutor(int skip) {
+            return _torDao.GetAll(skip);
         }
         public Tutor GetTutorById(int id) {
             return _torDao.GetById(id);

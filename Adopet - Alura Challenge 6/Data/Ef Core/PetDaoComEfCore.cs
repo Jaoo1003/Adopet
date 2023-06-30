@@ -32,8 +32,8 @@ namespace Adopet___Alura_Challenge_6.Data.Ef_Core {
             return true;
         }
 
-        public IEnumerable<Pet> GetAll() {
-            return _context.Pets.ToList();
+        public IEnumerable<Pet> GetAll(int skip) {
+            return _context.Pets.Skip(skip * 10).Take(10);
         }
 
         public Pet GetById(int id) {

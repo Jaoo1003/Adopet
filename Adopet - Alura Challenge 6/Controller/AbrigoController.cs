@@ -6,7 +6,7 @@ namespace Adopet___Alura_Challenge_6.Controller
 {
     [ApiController]
     [Route("[controller]")]
-    public class AbrigoController : ControllerBase{
+    public class AbrigoController : ControllerBase {
         private readonly IAdminService _adminService;
         public AbrigoController(IAdminService adminService) {
             _adminService = adminService;
@@ -18,9 +18,9 @@ namespace Adopet___Alura_Challenge_6.Controller
             return NoContent();
         }
 
-        [HttpGet]
-        public IActionResult GetAllAbrigos() {
-            var abrigos = _adminService.GetAllAbrigos();
+        [HttpGet("page/{skip:int}")]
+        public IActionResult GetAllAbrigos([FromRoute] int skip) {
+            var abrigos = _adminService.GetAllAbrigos(skip);
             return Ok(abrigos);
         }
 

@@ -25,9 +25,9 @@ namespace Adopet___Alura_Challenge_6.Controller
             return NoContent();
         }
 
-        [HttpGet]
-        public IActionResult GetAllTutores() {
-            var tutores = _adminService.GetAllTutor();
+        [HttpGet("page/{skip:int}")]
+        public IActionResult GetAllTutores(int skip) {
+            var tutores = _adminService.GetAllTutor(skip);
             return Ok(tutores);
         }
 

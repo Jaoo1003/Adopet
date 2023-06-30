@@ -50,7 +50,7 @@ namespace Adopet.Tests.Services
 
             //Act
             var abrigoDao = CreateAbrigoDaoEfCoreObject();
-            var abrigos = abrigoDao.GetAll();
+            var abrigos = abrigoDao.GetAll(1);
 
             //Assert
             Assert.NotNull(abrigos);
